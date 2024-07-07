@@ -8,11 +8,11 @@
 // REFER TO ARDUINO BASICS WORKSHOP ON HOW TO CODE SENSORS
 
 // Ultrasonic sensor pins
-#define echoPin 1 //change this
-#define trigPin 2 //change this
+#define echoPin 1 // CHANGE THIS
+#define trigPin 2 // CHANGE THIS
 
 // Infrared sensor pins
-#define IRPin 3 //change this
+#define IRPin 3 // CHANGE THIS
 
 
 
@@ -161,3 +161,5 @@ void driveForwards()
 
 // What other movement functions might we need?
 // TODO: Create some of your own movement functions.
+
+// Don't forget to ask questions on the DISCORD if you need any help!

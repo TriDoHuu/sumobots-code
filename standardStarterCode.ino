@@ -27,8 +27,15 @@ void setup() {
   // attacking
 }
 void loop() {
+    // The loop is mostly up to you, whether you want to include system states
+    // as discussed in week 5's build session, 
 
+    // Think about how you will keep track of which state the bot is current in,
+    // how you will separate states from each other and what conditions will
+    // make your sumobot change states
 }
 
+// TODO: Create functions for your sumobot
+// E.g. driveForward, driveBackward, etc...
 
-// TODO: Create
+// Don't forget to ask questions on the DISCORD if you need any help!
