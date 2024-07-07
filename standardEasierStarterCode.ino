@@ -106,6 +106,19 @@ int exampleFunction(int x, int y) {
     return distance; // this returns to where the function was called
 }
 
+/*  Function: Example Function 2 (Addition function)
+/   parameters: x, y
+/   returns: whether the sum of x and y is greater than 10
+*/
+bool add(int x, int y) {
+    int sum = x + y;
+	if (sum > 10) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /////////////////////////// Sensor Functions ///////////////////////////////////
 
 /*  Function: Get Distance
@@ -130,12 +143,12 @@ int getDistance(int trigPin, int echoPin) {
 /   summary: uses IR sensor to detect edge of arena
 */
 int checkBorder(int IRPin) {
-  int statusSensor = digitalRead(irSensorPin);
-  if (statusSensor == HIGH) {
-    return 1;
-  } else {
-    return 0;
-  }
+	int statusSensor = digitalRead(irSensorPin);
+	if (statusSensor == HIGH) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 // What if you have more than 1 ultrasonic or infrared sensor? Do you need more
@@ -150,13 +163,13 @@ int checkBorder(int IRPin) {
 */
 void driveForwards()
 {
-  analogWrite(LEFT_SPEED, MAX_SPEED);
-  analogWrite(RIGHT_SPEED, MAX_SPEED);
+	analogWrite(LEFT_SPEED, MAX_SPEED);
+	analogWrite(RIGHT_SPEED, MAX_SPEED);
 
-  digitalWrite(LEFT_F, HIGH);
-  digitalWrite(LEFT_R, LOW);
-  digitalWrite(RIGHT_F, HIGH);
-  digitalWrite(RIGHT_R, LOW);
+	digitalWrite(LEFT_F, HIGH);
+	digitalWrite(LEFT_R, LOW);
+	digitalWrite(RIGHT_F, HIGH);
+	digitalWrite(RIGHT_R, LOW);
 }
 
 // What other movement functions might we need?
