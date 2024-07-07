@@ -111,7 +111,7 @@ int exampleFunction(int x, int y) {
 /   returns: whether the sum of x and y is greater than 10
 */
 bool add(int x, int y) {
-    int sum = x + y;
+	int sum = x + y;
 	if (sum > 10) {
 		return true;
 	} else {
