@@ -1,28 +1,29 @@
 ////////////////////////////////////////////////////////////////////////////////
-// This is ___ authored by team ___ for sumobots. ...// incomplete
+// This is ___ authored by team ___ for MTRNSoc's sumobot competition
 ////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Define ultrasonic and infrared sensor pins
 // REFER TO ARDUINO BASICS WORKSHOP ON HOW TO CODE SENSORS
 
 // Ultrasonic sensor pins
-#define echoPin1 8
-#define trigPin1 9
+// CHANGE THIS
+#define echoPin1 1
+#define trigPin1 2
 
 // Infrared sensor pins
+// CHANGE THIS
 #define IRPin 3
 
 // TODO: Define constants/variables for motors (workshop 4)
-// Motor A
-int RIGHT_SPEED = 9; // Speed pin, ranges from 0 to 255 (ENA)
-int RIGHT_F = 14; // Pin to move motor forwards (IN1)
-int RIGHT_R = 15; // Pin to move motor backwards (IN2)
+// CHANGE THESE
+int RIGHT_SPEED = 1; // Speed pin, ranges from 0 to 255 (ENA)
+int RIGHT_F = 2; // Pin to move motor forwards (IN1)
+int RIGHT_R = 3; // Pin to move motor backwards (IN2)
 
-// Motor B
-int LEFT_SPEED = 10; // Speed pin, ranges from 0 to 255 (ENB)
-int LEFT_F = 16; // Pin to move motor forwards (IN3)
-int LEFT_R = 17; // Pin to move motor backwards (IN4)
-
+// CHANGE THESE
+int LEFT_SPEED = 4; // Speed pin, ranges from 0 to 255 (ENB)
+int LEFT_F = 5; // Pin to move motor forwards (IN3)
+int LEFT_R = 6; // Pin to move motor backwards (IN4)
 
 // TODO: Define other constants to be used in your sumobot
 #define MAX_SPEED 255
@@ -31,7 +32,7 @@ int LEFT_R = 17; // Pin to move motor backwards (IN4)
 #define SEARCHING 1
 #define ATTACKING 2
 
-// TODO: Initialise more global variable to be used
+// TODO: Initialise more global variables to be used
 int currentState = WAITING;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -77,10 +78,10 @@ void loop() {
             // For now, if you have wired up your bot correctly, this should be
             // printing out the distance being read from teh
             double distanceDetected = getDistance(trigPin1, echoPin1);
-            
+
             // Use println statements to ensure that you code is working properly
             // String([value]) converts a value to a string, and you can add strings
-            // to each other to combine them
+            // to each other to combine them into one.
             Serial.println("Distance detected: " + String(distanceDetected) + " cm");
             
             // if another bot is found, what should the new currentState be?
@@ -96,9 +97,9 @@ void loop() {
             // This is for if the currentState is neither SEARCHING or ATTACKING
             break;
         }
+        // What other states would you need?
 
-        // Small delay for stability
-        delay(250);
+        delay(250); // Small delay for stability
     }
 
     // The bot will run this code if the IR detects white
