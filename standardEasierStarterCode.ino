@@ -1,8 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
-// This is ___ authored by ___ for sumobots. ...// incomplete
+// This is ___ authored by team ___ for sumobots. ...// incomplete
 ////////////////////////////////////////////////////////////////////////////////
-
-
 
 // TODO: Define ultrasonic and infrared sensor pins
 // REFER TO ARDUINO BASICS WORKSHOP ON HOW TO CODE SENSORS
@@ -14,21 +12,16 @@
 // Infrared sensor pins
 #define IRPin 3 // CHANGE THIS
 
-
-
 // TODO: Define constants/variables for motors (workshop 4)
-/*
-*
-*
-*
-*/
+// E.g. pinMode(PIN, OUTPUT);
 
 // TODO: Define other constants to be used in your sumobot
+#define WAITING 0
 #define SEARCHING 1
 #define ATTACKING 2
 
-// TODO: Initialise global variable to be used
-
+// TODO: Initialise more global variable to be used
+int currentState = WAITING;
 
 ////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// Setup Function /////////////////////////////////
@@ -40,12 +33,10 @@ void setup() {
   // slides)
 
 
-  // TODO: Setup serial communication at 9600 baudrate to allow testing for
+  //Setup serial communication at 9600 baudrate to allow testing for
   // input/output of the sumobot
+  Serial.begin(9600);
 
-
-  // TODO: Setup starting phase, where sumobot waits 5 seconds until it starts
-  // attacking
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -55,12 +46,16 @@ void setup() {
 // This function is where all your logic will go. The provided template uses the 
 // 'states model' discussed in week 5's build session.
 void loop() {
+    // Stay in system state WAITING for 5 seconds
+    if (currentState == WAITING) {
+        delay(5000);
+        currentState = SEARCHING;
+    }
 
     // If the IR doesnt detect white, the bot wil only run this while loop
-    while (checkBorder(IRPin) == 0) {
-        
-        int currentState = 1; // starting state is set to SEARCHING
-
+    if (checkBorder(IRPin) == 0) {
+        // A switch statement allows us to compare a given variable to multiple
+        // cases.
         switch (currentState) {
         case SEARCHING:
             // TODO: Add code to search for another bot
@@ -77,7 +72,7 @@ void loop() {
             // If the other bot is lost, what should the new currentState be?
             
         default:
-            // This is for if the currentState is neither SEARCHING or ATTACHING
+            // This is for if the currentState is neither SEARCHING or ATTACKING
             break;
         }
 
@@ -90,7 +85,6 @@ void loop() {
     // What movement should the bot do in this situation?
     
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// More Functions //////////////////////////////////
@@ -108,18 +102,20 @@ int exampleFunction(int x, int y) {
 
 /*  Function: Example Function 2 (Addition function)
 /   parameters: x, y
-/   returns: whether the sum of x and y is greater than 10
+/   returns: true if the sum of x and y is greater than 10, false if not
 */
 bool add(int x, int y) {
 	int sum = x + y;
-	if (sum > 10) {
+	if (sum > 10) { // Use if statements to check for conditions
 		return true;
 	} else {
 		return false;
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////
 /////////////////////////// Sensor Functions ///////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 /*  Function: Get Distance
 /   parameters: trigPin, EchoPin
@@ -134,8 +130,11 @@ int getDistance(int trigPin, int echoPin) {
     digitalWrite(trigPin, LOW);
     duration = pulseIn(echoPin, HIGH);
     distance = (duration * 0.0340 / 2) + 2;
+    Serial.println("Distance detected", distance);
     return distance;
 }
+// IMPORTANT NOTE:
+// How will you prevent your sumobot from detecting objects outside of the ring?
 
 /*  Function: Check Border
 /   parameters: IRPin
@@ -154,7 +153,9 @@ int checkBorder(int IRPin) {
 // What if you have more than 1 ultrasonic or infrared sensor? Do you need more
 // reading functions or can the same ones be used?
 
+////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Move Functions //////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 /*  Function: Drive forward
 /   parameters: none
@@ -163,6 +164,7 @@ int checkBorder(int IRPin) {
 */
 void driveForwards()
 {
+    Serial.println("Driving forward");
 	analogWrite(LEFT_SPEED, MAX_SPEED);
 	analogWrite(RIGHT_SPEED, MAX_SPEED);
 
@@ -170,6 +172,25 @@ void driveForwards()
 	digitalWrite(LEFT_R, LOW);
 	digitalWrite(RIGHT_F, HIGH);
 	digitalWrite(RIGHT_R, LOW);
+}
+// ADDITIONAL: How can we change the above function to all the sumobot to move
+// forward at a variable speed? HINT: Modify the analogWrite functions
+
+/*  Function: Drive backwards
+/   parameters: none
+/   returns: none
+/   summary: this function drives sumobot backwards
+*/
+void driveBackwards()
+{
+    Serial.println("Driving backwards");
+	analogWrite(LEFT_SPEED, MAX_SPEED);
+	analogWrite(RIGHT_SPEED, MAX_SPEED);
+
+	digitalWrite(LEFT_F, LOW);
+	digitalWrite(LEFT_R, HIGH);
+	digitalWrite(RIGHT_F, LOW);
+	digitalWrite(RIGHT_R, HIGH);
 }
 
 // What other movement functions might we need?

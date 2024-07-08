@@ -33,6 +33,10 @@ void loop() {
     // Think about how you will keep track of which state the bot is current in,
     // how you will separate states from each other and what conditions will
     // make your sumobot change states
+
+    // You can use a variable and a switch/case statement to keep track of which
+    // system state you are in. If you are not sure what this is, look at the
+    // loop in standardEasierStarterCode.ino
 }
 
 // TODO: Create functions for your sumobot

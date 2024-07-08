@@ -20,4 +20,4 @@ Wi.~!X$?!-~    : ?$$$B$Wu("**$RM!
 $R@i.~~ !     :   ~$$$$$B$$en:``
 ?MXT@Wx.~    :     ~"##*$$$$M~
  */
-// Damn you really wanted the starter code for advanced stream?
+// do u really need a scaffold?
