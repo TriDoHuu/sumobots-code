@@ -10,7 +10,7 @@
 
 // TODO: Define other constants to be used in your sumobot
 
-// TODO: Initialise global variable to be used
+// TODO: Initialise global variables to be used
 
 
 void setup() {
