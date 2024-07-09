@@ -19,7 +19,7 @@ There are also mentors that are happy to help you out, and if we're not availabl
 
 ### General Sumobot Coding Advice
 - One approach discussed briefly at the end of workshop 4 and/or in week 5's build session was to use system states, implemented using a switch/case statement, as well as a variable to keep track of which state your sumobot is currently in.
- - Coding system states is also covered in the slides[https://www.canva.com/design/DAGI8cjTvJ0/wV9paa2z3HaPYgHhJyGpxg/edit]
+ - Coding system states is also covered in the [slides](https://www.canva.com/design/DAGI8cjTvJ0/wV9paa2z3HaPYgHhJyGpxg/edit)
 - Try not to make functions too long, as it can make code hard to read. If you find that a certain piece of code is too long, see if you can direct the functionality to another function.
 - Don't overthink it; Oftentimes the simplest code is the best solution
 - Stick with a consistent coding style - Makes code easier to read
