@@ -8,6 +8,18 @@ Covered in Workshop 4, download and setup the Arduino IDE
 1. Download the Arduino IDE [here](https://www.arduino.cc/en/software) or at https://www.arduino.cc/en/software
 2. Create a new sketch
 3. Copy & paste the code in MotorControlDemo.ino to test whether you have connected your sumobot correctly
+4. To upload code to your sumobot, connect it to your computer, and select the correct port and board type in the top left (Port should look something like "usbserial", "COM5" or similar. A trick you can use to identify the port is by disconnecting and reconnecting the port and seeing which port disappears from the list)
+   
+### Upload Errors
+If you have no errors, you are in luck!
+
+It's always a mission uploading code using the IDE, here's a fix to a common error that occurs:
+
+Run the old bootlegger. Go to Tools > Processor > Atmega328P(Old bootlegger):
+
+Now try uploading again, it should work!
+
+If the same or similar error still persists, ensure the right board and port is selected, press the reset button on the arduino or restart your IDE.
 
 ## 🏍️ Testing Your Motors
 MotorControlDemo.ino is a small program that will allow you to test whether you have soldered your motor pins correctly, and test out motor movement. You may also like to take some inspiration from the functions in your own sumobot code!
