@@ -221,6 +221,7 @@ void driveBackwards()
 /   returns: none
 /   summary: this function turns sumobot to the left
 */
+
 void moveLeft()
 {
     Serial.println("Moving left");
