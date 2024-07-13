@@ -1,10 +1,10 @@
 # 🤖 sumobots-code
 # Getting Started
-Open up your arduino IDE and configure the right setting for your port and arduino nano. If you're not sure how to code, PLEASE watch our arduino basics and motor control workshop videos, avaiable on the MTRNSoc youtube channel or via a link on the discord.
+Open up your arduino IDE and configure the right setting for your port and arduino nano. If you're not sure how to code, PLEASE watch our arduino basics and motor control workshop videos [here](https://www.youtube.com/watch?v=Qaol1ywlcjQ&ab_channel=UNSWMechatronicsSociety).
 
 # Getting Started with the Arduino IDE
 ## Setup
-Covered in Workshop 4, download and setup the Arduino IDE
+Covered in Workshop 4, download and set up the Arduino IDE
 1. Download the Arduino IDE [here](https://www.arduino.cc/en/software) or at https://www.arduino.cc/en/software
 2. Create a new sketch
 3. Copy & paste the code in MotorControlDemo.ino to test whether you have connected your sumobot correctly
@@ -31,7 +31,7 @@ MotorControlDemo.ino is a small program that will allow you to test whether you 
 
 # Programming tips:
 ## For those unfamiliar with code
-If you haven't completed COMP1511 yet, and you want to try to code your sumobot, we have prepared some slides on the basics of coding (quiz included), available at: https://www.canva.com/design/DAGI8cjTvJ0/wV9paa2z3HaPYgHhJyGpxg/edit
+If you haven't completed COMP1511 yet, and you want to try to code your sumobot, we have prepared some slides on the basics of coding (quiz included), available [here](https://www.canva.com/design/DAGI8cjTvJ0/wV9paa2z3HaPYgHhJyGpxg/edit)
 
 There are also mentors that are happy to help you out, and if we're not available, surely your teammates would lend a helping hand, right?
 
